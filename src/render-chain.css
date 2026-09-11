@@ -79,6 +79,25 @@ body {
   line-height: 1.75;
 }
 
+.proxy-about > p:not(.proxy-about-kicker) + p {
+  margin-top: 16px;
+}
+
+.proxy-about a:not(.proxy-repository-link) {
+  color: var(--offline);
+  text-decoration-color: rgba(76, 99, 184, .4);
+  text-underline-offset: 4px;
+}
+
+.proxy-about a:not(.proxy-repository-link):hover {
+  text-decoration-color: currentColor;
+}
+
+.proxy-research-link {
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .proxy-repository-link {
   display: inline-flex;
   align-items: center;
@@ -597,22 +616,23 @@ body[data-chain-step="stereo"] .method-strip [data-method="path"] { opacity: .24
    inspection, and authoring surface out of its default presentation. */
 .chain-only { overflow-x: hidden; overflow-y: auto; background: var(--paper); }
 .chain-only .diagram-shell {
-  display: grid;
-  grid-template-rows: clamp(120px, 17vh, 170px) calc(100vh - clamp(120px, 17vh, 170px)) auto auto;
-  place-items: center;
+  display: block;
   width: 100vw;
   max-width: none;
   min-height: 100vh;
   padding: 0;
 }
 .chain-only .virtual-imaging-title {
-  grid-row: 1;
-  margin: 0;
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin: clamp(36px, 7vh, 72px) auto 0;
 }
 .chain-only .chain-stage {
-  grid-row: 2;
-  width: min(100vw, calc((100vh - clamp(120px, 17vh, 170px)) * 1.7778));
-  height: min(calc(100vh - clamp(120px, 17vh, 170px)), 56.25vw);
+  width: min(100vw, 1600px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: clamp(56px, 8vw, 120px) auto 0;
   border: 0;
   box-shadow: none;
 }
@@ -658,13 +678,15 @@ body[data-chain-step="stereo"] .method-strip [data-method="path"] { opacity: .24
   }
   .chain-only .diagram-shell {
     min-height: 100dvh;
-    grid-template-rows: 72px calc(100dvh - 72px) auto auto;
+  }
+  .chain-only .virtual-imaging-title {
+    margin-top: 24px;
   }
   .chain-only .chain-stage {
-    align-self: start;
     width: 100vw;
-    height: calc(100dvh - 72px);
+    height: 100svh;
     aspect-ratio: auto;
+    margin-top: 56px;
   }
   .view-controls {
     top: auto;

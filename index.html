@@ -11,6 +11,33 @@
 <body class="chain-only">
   <main class="diagram-shell">
     <h1 class="virtual-imaging-title">View-Dependent Proxy</h1>
+    <section class="proxy-about" aria-labelledby="proxy-about-title">
+      <p class="proxy-about-kicker">WHY A PROXY?</p>
+      <h2 id="proxy-about-title">Preserving a rare material under real-time constraints.</h2>
+      <p>
+        I wanted the user to feel as though they were holding a genuine opal, one of the world's rarest and most valuable gemstones.
+      </p>
+      <p>
+        In my <a href="/posts/opals/">previous article</a>, I explored how I rendered the opal's complex, view-dependent appearance. As of summer 2026, however, that rendering process is too computationally demanding to run in real time on current-generation AR glasses.
+      </p>
+      <p>
+        The solution is to use a proxy. In computer graphics, a proxy is a lightweight representation that stands in for a more expensive asset or process. It preserves the properties required by the experience while reducing the computational cost of rendering and interaction. In this case, the proxy replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
+      </p>
+      <p><a class="proxy-research-link" href="https://dl.acm.org/doi/abs/10.1145/3658177">Related ACM research</a></p>
+      <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
+        <span>View source on GitHub</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M6 14 14 6M8 6h6v6" />
+        </svg>
+      </a>
+    </section>
+
+    <figure class="proxy-demo-video">
+      <video controls playsinline preload="metadata" poster="./assets/video/VDP-demo.jpg">
+        <source src="./assets/video/VDP-demo.mp4" type="video/mp4">
+      </video>
+    </figure>
+
     <section id="render-chain-stage" class="chain-stage" aria-label="Interactive view-dependent object proxy">
       <div class="orientation-panel-backdrop" aria-hidden="true"></div>
       <canvas id="render-chain-canvas" aria-label="Interactive three-dimensional view-dependent proxy"></canvas>
@@ -53,26 +80,6 @@
       <div id="chain-loading" class="chain-loading" role="status"><span aria-hidden="true"></span><p>Loading proxy geometry</p></div>
       <div id="chain-error" class="chain-error" hidden><p>Proxy geometry unavailable.</p></div>
     </section>
-
-    <section class="proxy-about" aria-labelledby="proxy-about-title">
-      <p class="proxy-about-kicker">VIEW-DEPENDENT PROXY</p>
-      <h2 id="proxy-about-title">A lightweight stand-in for complex appearance.</h2>
-      <p>
-        A view-dependent proxy represents an object whose appearance changes too much with viewpoint to survive a conventional texture. Here, the opal is rendered offline from a grid of azimuth and elevation angles and packed into an image atlas. At runtime, the viewer angle selects the matching atlas cell while a lightweight proxy holds the object's position and interaction in 3D space.
-      </p>
-      <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
-        <span>View source on GitHub</span>
-        <svg viewBox="0 0 20 20" aria-hidden="true">
-          <path d="M6 14 14 6M8 6h6v6" />
-        </svg>
-      </a>
-    </section>
-
-    <figure class="proxy-demo-video">
-      <video controls playsinline preload="metadata" poster="./assets/video/VDP-demo.jpg">
-        <source src="./assets/video/VDP-demo.mp4" type="video/mp4">
-      </video>
-    </figure>
   </main>
   <script type="module" src="./src/render-chain.js"></script>
 </body>
