@@ -12,21 +12,24 @@
   <main class="diagram-shell">
     <h1 class="virtual-imaging-title">View-Dependent Proxy</h1>
     <section class="proxy-about" aria-labelledby="proxy-about-title">
-      <h2 id="proxy-about-title">How can I give the user the impression of holding a genuine opal, one of the world's rarest and most valuable gemstones?</h2>
+      <h2 id="proxy-about-title">How can I make someone feel as though they are holding a genuine opal?</h2>
       <p>
-        The most direct answer is physical: a synthetic opal. It provides material fidelity and haptic feedback because the material itself supplies both appearance and touch. In a digital environment, however, the opal has to be rendered.
+        Well, the obvious answer is to buy a synthetic opal. You can find one cheaply on Etsy, and because it is a physical object, it already has the weight, surface, and play of color that a render has to reconstruct. That would be the sensible thing to do.
       </p>
       <p>
-        A render is inexpensive to reproduce, easy to modify, and open to inspection. Its touch and optical behavior must be reconstructed computationally. If you have a bit of insanity, you use a render.
+        So how did I end up in the digital version? I became curious about a different question: could I recreate the same impression with the tools I already had? In another time those tools might have been oil paint. Mine happen to be screens, computers, and now AI, so I tried to make the opal interactive.
       </p>
       <p>
-        An opal in AR begins as an exercise in curiosity: understand how a material produces its appearance, then reverse-engineer those effects under a different set of constraints. Like painting an object, reconstruction forces closer observation, and the process can produce insights beyond the finished image.
+        The impulse is close to painting. You study an object until you begin to understand what makes it feel like itself, then rebuild that impression within the limits of your medium. The result is an image, but the process also teaches you how to see and how to use your tools. That is where the self-mastery comes from.
       </p>
       <p>
-        In my <a href="/posts/opals/">previous article</a>, I explored how I rendered the opal's complex, view-dependent appearance. As of summer 2026, however, that rendering process is too computationally demanding to run in real time on current-generation AR glasses.
+        That is how I ended up rendering an opal on augmented reality glasses. A synthetic stone would have been the sane answer. I chose the render.
       </p>
       <p>
-        A proxy provides the necessary workaround. In computer graphics, a proxy is a lightweight representation that stands in for a more expensive asset or process. It preserves the required visual properties while reducing the computational cost of rendering and interaction. In this case, the proxy replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
+        In my <a href="/posts/opals/">previous article</a>, I went deep into how I rendered the opal's view-dependent appearance. As of summer 2026, that process is still too computationally demanding to run in real time on current-generation AR glasses.
+      </p>
+      <p>
+        So I needed a workaround: a proxy. In computer graphics, a proxy is a lightweight representation used in place of a more expensive asset or process. Here, it replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
       </p>
       <p><a class="proxy-research-link" href="https://dl.acm.org/doi/abs/10.1145/3658177">Related ACM research</a></p>
       <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
