@@ -340,6 +340,7 @@ controls.target.set(0, .18, 0);
 controls.enableDamping = true;
 controls.dampingFactor = .055;
 controls.enablePan = false;
+controls.enableZoom = false;
 controls.rotateSpeed = .24;
 controls.zoomSpeed = .38;
 controls.minZoom = .78;
