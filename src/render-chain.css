@@ -57,10 +57,10 @@ body {
   margin: 0 0 20px;
   color: var(--ink);
   font-family: "Stack Sans Notch", ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(30px, 4.2vw, 54px);
+  font-size: clamp(24px, 2.5vw, 36px);
   font-weight: 500;
-  letter-spacing: -.025em;
-  line-height: 1.02;
+  letter-spacing: -.015em;
+  line-height: 1.08;
 }
 
 .proxy-about > p {
@@ -652,7 +652,7 @@ body[data-chain-step="stereo"] .method-strip [data-method="path"] { opacity: .24
     padding: 0;
   }
   .proxy-about h2 {
-    font-size: clamp(28px, 10vw, 40px);
+    font-size: clamp(23px, 7vw, 32px);
   }
   .proxy-about > p {
     font-size: 13px;

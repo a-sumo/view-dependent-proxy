@@ -14,10 +14,19 @@
     <section class="proxy-about" aria-labelledby="proxy-about-title">
       <h2 id="proxy-about-title">How can I give the user the impression of holding a genuine opal, one of the world's rarest and most valuable gemstones?</h2>
       <p>
+        The most direct answer is physical: a synthetic opal. It provides material fidelity and haptic feedback because the material itself supplies both appearance and touch. In a digital environment, however, the opal has to be rendered.
+      </p>
+      <p>
+        A render is inexpensive to reproduce, easy to modify, and open to inspection. Its touch and optical behavior must be reconstructed computationally. If you have a bit of insanity, you use a render.
+      </p>
+      <p>
+        An opal in AR begins as an exercise in curiosity: understand how a material produces its appearance, then reverse-engineer those effects under a different set of constraints. Like painting an object, reconstruction forces closer observation, and the process can produce insights beyond the finished image.
+      </p>
+      <p>
         In my <a href="/posts/opals/">previous article</a>, I explored how I rendered the opal's complex, view-dependent appearance. As of summer 2026, however, that rendering process is too computationally demanding to run in real time on current-generation AR glasses.
       </p>
       <p>
-        The solution is to use a proxy. In computer graphics, a proxy is a lightweight representation that stands in for a more expensive asset or process. It preserves the properties required by the experience while reducing the computational cost of rendering and interaction. In this case, the proxy replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
+        A proxy provides the necessary workaround. In computer graphics, a proxy is a lightweight representation that stands in for a more expensive asset or process. It preserves the required visual properties while reducing the computational cost of rendering and interaction. In this case, the proxy replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
       </p>
       <p><a class="proxy-research-link" href="https://dl.acm.org/doi/abs/10.1145/3658177">Related ACM research</a></p>
       <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
