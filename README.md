@@ -4,8 +4,6 @@ An interactive 3D object proxy whose appearance is selected from a view-dependen
 
 <video src="./assets/video/Opals_Showcase.mp4" controls muted playsinline width="960"></video>
 
-[Open the interactive demo](https://a-sumo.github.io/view-dependent-proxy/)
-
 ## What it does
 
 An object with costly view-dependent optical behavior is rendered offline from a set of sampled camera positions. Those images are packed into a multi-view atlas. At runtime, the browser chooses the atlas cell nearest the viewer's azimuth and elevation, then places that image on an object-aligned proxy. A lightweight mesh supplies spatial placement, interaction, and occlusion cues.
