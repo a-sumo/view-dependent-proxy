@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/render-chain.css">
+  <title>pursuing naturalness.</title>
+</head>
+<body class="chain-only">
+  <main class="diagram-shell">
+    <h1 class="virtual-imaging-title">pursuing naturalness.</h1>
+    <section id="render-chain-stage" class="chain-stage" aria-label="Interactive view-dependent object proxy">
+      <div class="orientation-panel-backdrop" aria-hidden="true"></div>
+      <canvas id="render-chain-canvas" aria-label="Interactive three-dimensional view-dependent proxy"></canvas>
+
+      <section class="view-controls" aria-label="Selected view angle">
+        <label>
+          <span>AZIMUTH</span>
+          <input id="azimuth-slider" type="range" min="-180" max="180" step="1" value="0">
+          <output id="azimuth-slider-value" for="azimuth-slider">+0.0°</output>
+        </label>
+        <label>
+          <span>ELEVATION</span>
+          <input id="elevation-slider" type="range" min="0" max="6" step="1" value="5">
+          <output id="elevation-slider-value" for="elevation-slider">+0°</output>
+        </label>
+      </section>
+
+      <div id="label-lens-studio" class="engine-floor-label">AR Engine</div>
+      <div id="label-three-js" class="engine-floor-label">Web 3D Engine</div>
+      <div id="label-specs" class="scene-label label-specs">SPECS</div>
+      <div id="label-runtime-proxy" class="scene-label label-runtime">RUNTIME IMAGE PROXY</div>
+      <div id="label-atlas" class="scene-label label-bake">BAKED VIEW SET</div>
+      <div id="label-atlas-coordinate" class="scene-label atlas-coordinate-card label-bake">
+        <span>SELECTED BAKED VIEW</span>
+        <strong id="atlas-index-value">ATLAS [000, 03] · S00:C00</strong>
+        <small id="atlas-angular-value">θ 0.0° · φ +0°</small>
+      </div>
+      <div id="label-path-camera" class="scene-label label-offline">PATH-TRACING CAMERA</div>
+      <div id="label-image-plane" class="scene-label label-offline">SAMPLED IMAGE PLANE</div>
+      <div id="label-source-opal" class="scene-label label-offline">3D SOURCE · DIAGRAM CAMERA VIEW</div>
+      <div id="label-collider" class="scene-label label-collider">RIGID 3D COLLIDER</div>
+      <div id="label-projected-collider" class="scene-label label-collider">OBSERVER-VIEW SILHOUETTE</div>
+      <div id="label-light" class="scene-label label-offline">LIGHT SOURCE</div>
+
+      <canvas id="offline-camera-view" width="256" height="256" hidden></canvas>
+      <output id="atlas-address-value" hidden></output>
+      <output id="observer-azimuth-value" hidden></output>
+      <output id="chain-stage-value" hidden>Full chain</output>
+      <p id="chain-note" hidden></p>
+      <div id="chain-loading" class="chain-loading" role="status"><span aria-hidden="true"></span><p>Loading proxy geometry</p></div>
+      <div id="chain-error" class="chain-error" hidden><p>Proxy geometry unavailable.</p></div>
+    </section>
+  </main>
+  <script type="module" src="./src/render-chain.js"></script>
+</body>
+</html>
