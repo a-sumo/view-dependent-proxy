@@ -2508,8 +2508,15 @@ refreshAtlasSample();
 loadSpecs();
 loadPathCamera();
 
-if (new URLSearchParams(location.search).get('clean') === '1') {
+const pageParams = new URLSearchParams(location.search);
+
+if (pageParams.get('clean') === '1') {
   document.body.classList.add('clean-mode');
+  requestAnimationFrame(resize);
+}
+
+if (pageParams.get('embed') === '1') {
+  document.body.classList.add('embed-mode');
   requestAnimationFrame(resize);
 }
 

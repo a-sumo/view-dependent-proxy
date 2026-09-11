@@ -2,6 +2,8 @@
 
 An interactive 3D object proxy whose appearance is selected from a view-dependent image atlas.
 
+[Open the live interactive demo](https://armandsumo.com/labs/view-dependent-proxy/)
+
 [![Watch the showcase video](./assets/video/VDP-demo.jpg)](./assets/video/VDP-demo.mp4)
 
 ## What it does
