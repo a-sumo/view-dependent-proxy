@@ -24,6 +24,11 @@
       <div class="orientation-panel-backdrop" aria-hidden="true"></div>
       <canvas id="render-chain-canvas" aria-label="Interactive three-dimensional view-dependent proxy"></canvas>
 
+      <button id="labels-toggle" class="labels-toggle" type="button" aria-pressed="false">
+        <span>Labels</span>
+        <strong id="labels-toggle-state">Off</strong>
+      </button>
+
       <section class="view-controls" aria-label="Selected view angle">
         <label>
           <span>AZIMUTH</span>
@@ -42,16 +47,9 @@
       <div id="label-specs" class="scene-label label-specs">SPECS</div>
       <div id="label-runtime-proxy" class="scene-label label-runtime">RUNTIME IMAGE PROXY</div>
       <div id="label-atlas" class="scene-label label-bake">BAKED VIEW SET</div>
-      <div id="label-atlas-coordinate" class="scene-label atlas-coordinate-card label-bake">
-        <span>SELECTED BAKED VIEW</span>
-        <strong id="atlas-index-value">ATLAS [000, 03] · S00:C00</strong>
-        <small id="atlas-angular-value">θ 0.0° · φ +0°</small>
-      </div>
       <div id="label-path-camera" class="scene-label label-offline">PATH-TRACING CAMERA</div>
       <div id="label-image-plane" class="scene-label label-offline">SAMPLED IMAGE PLANE</div>
       <div id="label-source-opal" class="scene-label label-offline">3D SOURCE · DIAGRAM CAMERA VIEW</div>
-      <div id="label-collider" class="scene-label label-collider">RIGID 3D COLLIDER</div>
-      <div id="label-projected-collider" class="scene-label label-collider">OBSERVER-VIEW SILHOUETTE</div>
       <div id="label-light" class="scene-label label-offline">LIGHT SOURCE</div>
 
       <canvas id="offline-camera-view" width="256" height="256" hidden></canvas>

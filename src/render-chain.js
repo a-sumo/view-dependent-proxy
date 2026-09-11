@@ -61,8 +61,8 @@ const azimuthSliderValue = document.querySelector('#azimuth-slider-value');
 const elevationSliderValue = document.querySelector('#elevation-slider-value');
 const viewControls = document.querySelector('.view-controls');
 const orientationPanelBackdrop = document.querySelector('.orientation-panel-backdrop');
-const atlasIndexValue = document.querySelector('#atlas-index-value');
-const atlasAngularValue = document.querySelector('#atlas-angular-value');
+const labelsToggle = document.querySelector('#labels-toggle');
+const labelsToggleState = document.querySelector('#labels-toggle-state');
 const cameraViewAddress = document.querySelector('#camera-view-address');
 const cameraViewCanvas = document.querySelector('#offline-camera-view');
 const cameraViewContext = cameraViewCanvas.getContext('2d', {willReadFrequently: true});
@@ -294,10 +294,7 @@ function refreshAtlasSample() {
     v: selectedPitchRow,
   });
   const elevation = ELEVATIONS_DEG[selectedPitchRow];
-  const azimuthDegrees = selectedYaw / YAW_VIEWS * 360;
   atlasAddressValue.textContent = `LAYER ${String(sheet).padStart(2, '0')} · VIEW ${String(localView).padStart(2, '0')} · U${String(column).padStart(2, '0')} V${String(selectedPitchRow).padStart(2, '0')}`;
-  atlasIndexValue.textContent = `ATLAS [${String(selectedYaw).padStart(3, '0')}, ${String(selectedPitchRow).padStart(2, '0')}] · LAYER ${String(sheet).padStart(2, '0')} · VIEW ${String(localView).padStart(2, '0')}`;
-  atlasAngularValue.textContent = `θ ${azimuthDegrees.toFixed(1)}° · φ ${elevation >= 0 ? '+' : ''}${elevation}°`;
   cameraViewAddress.textContent = `Y${String(selectedYaw).padStart(3, '0')} · E${elevation >= 0 ? '+' : ''}${elevation}°`;
 }
 
@@ -2385,16 +2382,25 @@ const labels = [
   ['#label-specs', specsAnchor, new THREE.Vector3(-.35, .65, 0), 'stereo'],
   ['#label-runtime-proxy', runtimeProxy, new THREE.Vector3(0, .72, 0), 'runtime'],
   ['#label-atlas', atlas, new THREE.Vector3(0, .52, 0), 'bake'],
-  ['#label-atlas-coordinate', atlasSelection, new THREE.Vector3(.1, -.13, 0), 'bake'],
   ['#label-path-camera', pathCamera, new THREE.Vector3(0, -.25, 0), 'bake'],
   ['#label-image-plane', sampledPlane, new THREE.Vector3(0, .73, 0), 'bake'],
   ['#label-source-opal', sourceAtlasProxy, new THREE.Vector3(.18, .78, 0), 'source'],
-  ['#label-collider', runtimeCollider, new THREE.Vector3(.36, -.68, 0), 'runtime'],
-  ['#label-projected-collider', runtimeCollider, new THREE.Vector3(.23, -.38, 0), 'runtime'],
   ['#label-light', light, new THREE.Vector3(.05, .25, 0), 'source'],
 ].map(([selector, object, offset, step]) => ({
   element: document.querySelector(selector), object, offset, step,
 }));
+
+function setLabelsVisible(visible) {
+  document.body.classList.toggle('labels-visible', visible);
+  labelsToggle.setAttribute('aria-pressed', String(visible));
+  labelsToggleState.textContent = visible ? 'On' : 'Off';
+}
+
+labelsToggle.addEventListener('click', () => {
+  setLabelsVisible(!document.body.classList.contains('labels-visible'));
+});
+
+setLabelsVisible(false);
 
 function updateLabels() {
   const bounds = stage.getBoundingClientRect();
