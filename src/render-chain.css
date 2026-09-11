@@ -53,14 +53,6 @@ body {
   padding: 0 8px;
 }
 
-.proxy-about-kicker {
-  margin: 0 0 14px;
-  color: var(--bake);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .16em;
-}
-
 .proxy-about h2 {
   margin: 0 0 20px;
   color: var(--ink);
@@ -71,7 +63,7 @@ body {
   line-height: 1.02;
 }
 
-.proxy-about > p:not(.proxy-about-kicker) {
+.proxy-about > p {
   max-width: 72ch;
   margin: 0;
   color: var(--muted);
@@ -79,7 +71,7 @@ body {
   line-height: 1.75;
 }
 
-.proxy-about > p:not(.proxy-about-kicker) + p {
+.proxy-about > p + p {
   margin-top: 16px;
 }
 
@@ -101,23 +93,23 @@ body {
 .proxy-repository-link {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 11px;
   margin-top: 28px;
-  padding: 10px 14px;
-  border: 1px solid rgba(76, 99, 184, .34);
-  border-radius: 999px;
-  color: var(--offline);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .035em;
+  padding: 13px 17px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .025em;
   text-decoration: none;
-  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  transition: color 140ms ease, background-color 140ms ease, transform 140ms ease;
 }
 
 .proxy-repository-link:hover {
-  border-color: rgba(76, 99, 184, .72);
-  background: rgba(140, 169, 255, .08);
-  transform: translateY(-1px);
+  background: var(--ink);
+  color: #fff;
+  transform: translate(-2px, -2px);
 }
 
 .proxy-repository-link:focus-visible {
@@ -126,13 +118,10 @@ body {
 }
 
 .proxy-repository-link svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .proxy-demo-video {
@@ -665,7 +654,7 @@ body[data-chain-step="stereo"] .method-strip [data-method="path"] { opacity: .24
   .proxy-about h2 {
     font-size: clamp(28px, 10vw, 40px);
   }
-  .proxy-about > p:not(.proxy-about-kicker) {
+  .proxy-about > p {
     font-size: 13px;
     line-height: 1.65;
   }
