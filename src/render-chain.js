@@ -337,7 +337,10 @@ controls.target.set(0, .18, 0);
 controls.enableDamping = true;
 controls.dampingFactor = .055;
 controls.enablePan = false;
-controls.enableZoom = false;
+// The full-screen demo owns the wheel and can use it for camera zoom. The
+// article embed leaves the wheel to the surrounding page so readers are never
+// trapped inside the visualization while scrolling.
+controls.enableZoom = true;
 controls.rotateSpeed = .24;
 controls.zoomSpeed = .38;
 controls.minZoom = .78;
@@ -2523,6 +2526,7 @@ if (pageParams.get('clean') === '1') {
 
 if (pageParams.get('embed') === '1') {
   document.body.classList.add('embed-mode');
+  controls.enableZoom = false;
   requestAnimationFrame(resize);
 }
 
