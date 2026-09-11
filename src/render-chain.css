@@ -75,6 +75,32 @@ body {
   margin-top: 16px;
 }
 
+.proxy-note {
+  display: grid;
+  gap: 8px;
+  max-width: 68ch;
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--bake);
+  background: rgba(140, 169, 255, .09);
+}
+
+.proxy-note-label {
+  color: var(--offline);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.proxy-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .proxy-about a:not(.proxy-repository-link) {
   color: var(--offline);
   text-decoration-color: rgba(76, 99, 184, .4);

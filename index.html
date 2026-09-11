@@ -20,16 +20,22 @@
         So how did I end up doing this digitally? I became curious about a different question: could I recreate the same impression with the tools I had and already knew? In another time, those tools might have been a canvas, a brush, and a good collection of pigments. Mine happen to be screens, cameras, computers, and now AI.
       </p>
       <p>
-        The impulse and the approach are close to painting. You study an object until you begin to understand what creates the impression of it, then you try to convey that impression within the limits of your medium. The result is an image, ultimately a pattern of light on the retina, but the <em>process</em> also teaches you how to observe, use your tools more skillfully, and work through their constraints. That is where the self-mastery comes from.
+        However, the creative impulse and the approach are very close to painting. You study an object until you begin to understand what creates the impression of it, then you try to convey that impression within the limits of your medium. The result is an image, ultimately a pattern of light on the retina, but the <em>process</em> also teaches you how to observe, use your tools, including your own mind, more skillfully, and work through their constraints. That is where fulfillment and self-mastery come from.
+      </p>
+      <aside class="proxy-note" role="note" aria-label="Note">
+        <span class="proxy-note-label">Note</span>
+        <p>
+          My guess is that within a year, perhaps sooner, AI will be able to reproduce this from a single prompt, a process sometimes called one-shotting. The <a href="https://github.com/a-sumo/opal-pathtracer">renderer is already available online</a>.
+        </p>
+      </aside>
+      <p>
+        Now, I ended up rendering an opal on augmented reality glasses. They were the medium I was exploring at the time, and a hackathon gave the project a chance of receiving funding before it was ready for a full-fledged commercial release. It also gave me a reason to develop tools and techniques that might eventually inspire or help someone else.
       </p>
       <p>
-        In my case, I ended up rendering an opal on augmented reality glasses. They were the medium I was exploring at the time, and a hackathon gave the project a chance of receiving funding. It also gave me a reason to develop tools and techniques that might eventually inspire or help someone else.
+        In a <a href="/posts/opals/">separate article</a>, I went deep into how I rendered the opal's view-dependent appearance. The method runs fine on laptops and might work on XR headsets, though I still need to try it on my Quest 3. As of July 2026, however, it was still too computationally demanding to run in real time on current-generation AR glasses.
       </p>
       <p>
-        In a <a href="/posts/opals/">separate article</a>, I went deep into how I rendered the opal's view-dependent appearance. The method runs fine on laptops and might work on XR headsets, though I still need to try it on my Quest 3. As of summer 2026, however, it is still too computationally demanding to run in real time on current-generation AR glasses.
-      </p>
-      <p>
-        So I needed a workaround: a proxy. In computer graphics, a proxy is a lightweight representation used in place of a more expensive asset or process. Here, it replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position. The color views and their matching alpha masks are packed into atlases, then selected together and placed on an object-aligned proxy at runtime. The result is in the video below. The interactive diagram after it lets you play with the process.
+        So I needed a workaround: a proxy. In computer graphics, a proxy is a lightweight representation used in place of a more expensive asset or process. Here, it replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position. The color views and their matching alpha masks are packed into atlases, then selected together and placed on an object-aligned proxy at runtime. The video below shows the result. Using my mind, my energy, and 30% of my Codex weekly allowance for September 2026 across GPT-5.6 Sol and Terra, I crafted the interactive diagram that follows. It lets you play with the process.
       </p>
       <p><a class="proxy-research-link" href="https://dl.acm.org/doi/abs/10.1145/3658177">Related ACM research</a></p>
       <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
