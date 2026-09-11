@@ -621,11 +621,11 @@ function createTextSprite(initialText, color, width = .62) {
 }
 
 function createAtlasAddressBadge() {
-  const badgeWidth = .84;
-  const badgeHeight = .56;
+  const badgeWidth = 1.32;
+  const badgeHeight = .78;
   const badgeCanvas = document.createElement('canvas');
-  badgeCanvas.width = 840;
-  badgeCanvas.height = 560;
+  badgeCanvas.width = 1320;
+  badgeCanvas.height = 780;
   const context = badgeCanvas.getContext('2d');
   const texture = new THREE.CanvasTexture(badgeCanvas);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -648,10 +648,10 @@ function createAtlasAddressBadge() {
 
     context.fillStyle = 'rgba(255, 255, 255, .97)';
     context.strokeStyle = '#6482dc';
-    context.lineWidth = 12;
+    context.lineWidth = 16;
     context.lineJoin = 'round';
     context.beginPath();
-    context.roundRect(14, 14, badgeCanvas.width - 28, badgeCanvas.height - 28, 30);
+    context.roundRect(18, 18, badgeCanvas.width - 36, badgeCanvas.height - 36, 38);
     context.fill();
     context.stroke();
 
@@ -659,11 +659,11 @@ function createAtlasAddressBadge() {
     context.textBaseline = 'alphabetic';
     context.fillStyle = '#6482dc';
     context.fillStyle = '#282728';
-    context.font = '700 88px Inter, Arial, sans-serif';
-    context.fillText(`LAYER ${String(layer).padStart(2, '0')}`, 64, 224);
+    context.font = '700 150px Inter, Arial, sans-serif';
+    context.fillText(`LAYER ${String(layer).padStart(2, '0')}`, 92, 314);
     context.fillStyle = '#6482dc';
-    context.font = '600 68px Inter, Arial, sans-serif';
-    context.fillText(`VIEW ${String(view).padStart(2, '0')}`, 64, 392);
+    context.font = '700 118px Inter, Arial, sans-serif';
+    context.fillText(`VIEW ${String(view).padStart(2, '0')}`, 92, 570);
     texture.needsUpdate = true;
   };
   badge.userData.setAddress({layer: 0, view: 0, u: 0, v: 0});
@@ -1889,7 +1889,7 @@ function updateOrientationCupola(worldAzimuth, displayAzimuthDegrees) {
 }
 
 function setSliderFillProgress(slider, progress) {
-  const thumbWidth = 18;
+  const thumbWidth = Number.parseFloat(getComputedStyle(slider).getPropertyValue('--thumb-width')) || 18;
   const trackWidth = Math.max(1, slider.getBoundingClientRect().width);
   const clampedProgress = THREE.MathUtils.clamp(progress, 0, 1);
   // Native range thumbs travel inside the track by half their width. Match
@@ -2434,6 +2434,20 @@ function updateLabels() {
   const globeTop = (-projectedTopEdge.y * .5 + .5) * bounds.height;
   const globeBottom = (-projectedBottomEdge.y * .5 + .5) * bounds.height;
   const controlsTop = globeBottom + 10;
+  const isCompactViewport = matchMedia('(max-width: 650px)').matches;
+  if (isCompactViewport) {
+    // Mobile owns the controls as a compact, bottom-anchored HTML overlay.
+    // Leaving the desktop-projected `top` inline would stretch its grid
+    // between top and bottom and pull the two sliders apart.
+    viewControls.style.removeProperty('left');
+    viewControls.style.removeProperty('top');
+    if (orientationPanelBackdrop) {
+      orientationPanelBackdrop.style.removeProperty('left');
+      orientationPanelBackdrop.style.removeProperty('top');
+      orientationPanelBackdrop.style.removeProperty('height');
+    }
+    return;
+  }
   viewControls.style.left = `${centerX}px`;
   viewControls.style.top = `${controlsTop}px`;
   if (orientationPanelBackdrop) {
@@ -2448,7 +2462,14 @@ function resize() {
   const safeWidth = Math.max(1, width);
   const safeHeight = Math.max(1, height);
   const aspect = safeWidth / safeHeight;
-  const viewHeight = 8.2;
+  // Portrait layouts expand the frame for horizontal context, then cap it so
+  // the scene retains a useful on-screen scale.
+  const baseViewHeight = 8.2;
+  const baseViewWidth = baseViewHeight * 16 / 9;
+  const viewHeight = Math.min(
+    Math.max(baseViewHeight, baseViewWidth / aspect),
+    17,
+  );
   camera.left = -viewHeight * aspect * .5;
   camera.right = viewHeight * aspect * .5;
   camera.top = viewHeight * .5;

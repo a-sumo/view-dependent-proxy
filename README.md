@@ -2,7 +2,7 @@
 
 An interactive 3D object proxy whose appearance is selected from a view-dependent image atlas.
 
-[![Watch the showcase video](./assets/video/Opals_Showcase.jpg)](./assets/video/Opals_Showcase.mp4)
+[![Watch the showcase video](./assets/video/VDP-demo.jpg)](./assets/video/VDP-demo.mp4)
 
 ## What it does
 
