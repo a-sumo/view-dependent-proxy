@@ -17,19 +17,19 @@
         Well, the obvious answer is to buy a synthetic opal. You can find one cheaply on Etsy, and because it is a physical object, it already has the weight, surface, and play of color that a render has to reconstruct. That would be the sensible thing to do.
       </p>
       <p>
-        So how did I end up in the digital version? I became curious about a different question: could I recreate the same impression with the tools I already had? In another time those tools might have been oil paint. Mine happen to be screens, computers, and now AI, so I tried to make the opal interactive.
+        So how did I end up doing this digitally? I became curious about a different question: could I recreate the same impression with the tools I had and already knew? In another time, those tools might have been a canvas, a brush, and a good collection of pigments. Mine happen to be screens, cameras, computers, and now AI.
       </p>
       <p>
-        The impulse is close to painting. You study an object until you begin to understand what makes it feel like itself, then rebuild that impression within the limits of your medium. The result is an image, but the process also teaches you how to see and how to use your tools. That is where the self-mastery comes from.
+        The impulse and the approach are close to painting. You study an object until you begin to understand what creates the impression of it, then you try to convey that impression within the limits of your medium. The result is an image, ultimately a pattern of light on the retina, but the <em>process</em> also teaches you how to observe, use your tools more skillfully, and work through their constraints. That is where the self-mastery comes from.
       </p>
       <p>
-        That is how I ended up rendering an opal on augmented reality glasses. A synthetic stone would have been the sane answer. I chose the render.
+        In my case, I ended up rendering an opal on augmented reality glasses. They were the medium I was exploring at the time, and a hackathon gave the project a chance of receiving funding. It also gave me a reason to develop tools and techniques that might eventually inspire or help someone else.
       </p>
       <p>
-        In my <a href="/posts/opals/">previous article</a>, I went deep into how I rendered the opal's view-dependent appearance. As of summer 2026, that process is still too computationally demanding to run in real time on current-generation AR glasses.
+        In a <a href="/posts/opals/">separate article</a>, I went deep into how I rendered the opal's view-dependent appearance. The method runs fine on laptops and might work on XR headsets, though I still need to try it on my Quest 3. As of summer 2026, however, it is still too computationally demanding to run in real time on current-generation AR glasses.
       </p>
       <p>
-        So I needed a workaround: a proxy. In computer graphics, a proxy is a lightweight representation used in place of a more expensive asset or process. Here, it replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position.
+        So I needed a workaround: a proxy. In computer graphics, a proxy is a lightweight representation used in place of a more expensive asset or process. Here, it replaces live optical simulation with a set of pre-rendered views selected according to the viewer's position. The color views and their matching alpha masks are packed into atlases, then selected together and placed on an object-aligned proxy at runtime. The result is in the video below. The interactive diagram after it lets you play with the process.
       </p>
       <p><a class="proxy-research-link" href="https://dl.acm.org/doi/abs/10.1145/3658177">Related ACM research</a></p>
       <a class="proxy-repository-link" href="https://github.com/a-sumo/view-dependent-proxy">
