@@ -117,7 +117,7 @@ body {
 }
 
 .proxy-demo-video {
-  width: min(100%, 1200px);
+  width: min(100%, 820px);
   margin: 0 auto clamp(56px, 8vw, 120px);
 }
 
@@ -637,6 +637,25 @@ body[data-chain-step="stereo"] .method-strip [data-method="path"] { opacity: .24
 }
 
 @media (max-width: 650px) {
+  .proxy-about {
+    width: calc(100% - 32px);
+    margin: 48px auto 40px;
+    padding: 0;
+  }
+  .proxy-about h2 {
+    font-size: clamp(28px, 10vw, 40px);
+  }
+  .proxy-about > p:not(.proxy-about-kicker) {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .proxy-demo-video {
+    width: calc(100% - 16px);
+    margin-bottom: 56px;
+  }
+  .proxy-demo-video video {
+    border-radius: 2px;
+  }
   .chain-only .diagram-shell {
     min-height: 100dvh;
     grid-template-rows: 72px calc(100dvh - 72px) auto auto;
