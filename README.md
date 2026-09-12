@@ -4,7 +4,9 @@ An interactive 3D object proxy whose appearance is selected from a view-dependen
 
 [Open the live interactive demo](https://armandsumo.com/labs/view-dependent-proxy/)
 
-[![Watch the showcase video](./assets/video/VDP-demo.jpg)](./assets/video/VDP-demo.mp4)
+[![Animated preview of the view-dependent proxy](./assets/video/VDP-demo-preview.gif)](https://armandsumo.com/labs/view-dependent-proxy/)
+
+[Watch the full-quality showcase video](https://armandsumo.com/assets/view-dependent-proxy/VDP-demo.mp4)
 
 ## What it does
 
