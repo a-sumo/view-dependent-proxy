@@ -588,7 +588,7 @@ body {
   left: 0;
   max-width: 155px;
   padding: 4px 6px;
-  border-left: 2px solid currentColor;
+  border-bottom: 1px solid currentColor;
   background: rgba(255, 255, 255, .90);
   color: var(--ink);
   font-size: clamp(6px, .46vw, 8px);
